@@ -1,0 +1,132 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+  font-family: poppins;
+}
+.App{
+  width:100%;
+  height:100vh;
+  background: linear-gradient(to right top, rgba(0, 149, 225, 0.9), rgba(46,213, 61, 0.9));
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:8px;
+  padding:5px
+}
+.app-wrap2 {
+  /* background-color:red; */
+  width:60%;
+  height:70vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+}
+.todo {
+  width: 60%;
+  height:70px;
+  background-color:cornflowerblue;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  /* padding:20px; */
+
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.place {
+  height:30px;
+  width:85%;
+  border: none;
+  outline: none;
+  /* background: yellow; */
+}
+.add {
+  background-color: rgb(44, 42, 42);
+  border:none;
+  color: white;
+  width:30px;
+  border-radius:5px;
+  height:30px;
+  display: flex;
+  font-size:30px;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.card_holder{
+  min-height:40%;
+  width:60%;
+  padding:5px;
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-holder{
+  height:40px;
+  width: 95%;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.top{
+  color: rgb(58, 57, 57);
+  margin-left: -225px;
+}
+.top p{
+  font-weight: 600;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 95%;
+}
+.heading{
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(76, 3, 202);
+  color: white;
+  border-radius: 10px 10px 0 0;
+  outline: none;
+}
+.tasks{
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(152, 233, 117);
+  outline: none;
+}
+.tasks1{
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  border-radius: 0 0 10px 10px;
+  outline: none;
+}
