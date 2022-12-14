@@ -1,5 +1,5 @@
 import Card  from './Card.jsx';
-import React, {useRef, useState, useReducer, useEffect} from "react";
+import React, {useRef, useReducer, useEffect} from "react";
 import "./App.css";
 
 const initialState=[];
@@ -10,6 +10,8 @@ const reducer=(todo, actions)=>{
       return [...todo, { id: actions.payload.id + 1, title: actions.payload.title, checked: false}]
     case("toggle"):
       return todo.map((i)=> i.id === actions.payload.id? {...i, checked: !i.checked}: {...i})
+    case("delete"):
+      return todo.filter((i)=> i.id !== actions.payload.id)
     default:
       return todo
   }
@@ -17,20 +19,15 @@ const reducer=(todo, actions)=>{
 
 
 function App() {
-  const [val, setVal] = useState("")
   const [todo, dispatch] = useReducer(reducer, initialState)
   const inputRef = useRef('')
 
-  const handleChange=()=>{
-    setVal(inputRef.current.value)
-  }
-
   const addTodo=()=>{
-    dispatch({type: "create", payload:{id: todo.length ,title: val}})
+    dispatch({type: "create", payload:{id: todo.length ,title: inputRef.current.value}});
   }
-  // useEffect(() => {
-  //   console.log(todo)
-  // }, [todo])
+  useEffect(() => {
+    inputRef.current.value = ""
+  }, [todo])
   
 
   return (
@@ -38,7 +35,7 @@ function App() {
       <div className="app-wrap2">
         <div className="todo">
           <div className="input-holder">
-            <input ref={inputRef} className="place" placeholder="Add new todo.." onChange={handleChange}/>
+            <input ref={inputRef} className="place" placeholder="Add new todo.." />
             <button onClick={addTodo} className="add">+</button>
           </div>
         </div>

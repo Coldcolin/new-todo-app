@@ -31,6 +31,7 @@ export default function Card({todo, dispatch}) {
                   <input type="checkbox" onChange={()=>{dispatch({type: "toggle", payload:{id: item.id}})}}/>
                   <p className="todo-text">{item.title}</p>
                   {<p>{item.checked? "completed": "pending"}</p>}
+                  <div className="delete" onClick={()=> dispatch({type: "delete", payload: {id: item.id}})}></div>
                 </div>
               ))
             }

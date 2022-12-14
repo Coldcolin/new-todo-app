@@ -152,6 +152,20 @@
   max-width: 60%;
   overflow-y: scroll;
 }
+.delete{
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: black;
+  display: flex;
+  align-self: center;
+  cursor: pointer;
+  transition: all 350ms;
+}
+.delete:hover{
+  background-color: red;
+  transition: all 350ms;
+}
 
 /* width */
 ::-webkit-scrollbar {
