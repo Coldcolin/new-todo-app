@@ -28,7 +28,7 @@ export default function Card({todo, dispatch}) {
             {
               todo?.map((item)=>(
                 <div key={item.id} className="tasks1" style={{backgroundColor: item.checked? "#98e975": "#fff"}}>
-                  <input type="checkbox" onChange={()=>{dispatch({type: "toggle", payload:{id: item.id}})}}/>
+                  <input type="checkbox" onChange={()=>{dispatch({type: "toggle", payload:{id: item.id}})}} checked={item.checked} />
                   <p className="todo-text">{item.title}</p>
                   {<p>{item.checked? "completed": "pending"}</p>}
                   <div className="delete" onClick={()=> dispatch({type: "delete", payload: {id: item.id}})}></div>

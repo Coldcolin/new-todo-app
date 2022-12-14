@@ -19,14 +19,16 @@ const reducer=(todo, actions)=>{
 
 
 function App() {
-  const [todo, dispatch] = useReducer(reducer, initialState)
+  const [todo, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem('todo')))
   const inputRef = useRef('')
 
   const addTodo=()=>{
     dispatch({type: "create", payload:{id: todo.length ,title: inputRef.current.value}});
   }
+ 
   useEffect(() => {
-    inputRef.current.value = ""
+    inputRef.current.value = "";
+    localStorage.setItem('todo', JSON.stringify(todo));
   }, [todo])
   
 
