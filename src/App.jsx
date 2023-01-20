@@ -1,6 +1,7 @@
 import Card  from './Card.jsx';
 import React, {useRef, useReducer, useEffect} from "react";
 import "./App.css";
+import Swal from 'sweetalert2';
 
 const initialState=[];
 
@@ -23,6 +24,13 @@ function App() {
   const inputRef = useRef('')
 
   const addTodo=()=>{
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'New todo added successfully',
+      showConfirmButton: false,
+      timer: 2000
+    })
     dispatch({type: "create", payload:{id: todo.length ,title: inputRef.current.value}});
   }
  
