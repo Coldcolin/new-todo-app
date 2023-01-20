@@ -20,7 +20,7 @@ const reducer=(todo, actions)=>{
 
 
 function App() {
-  const [todo, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem('todo')))
+  const [todo, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem('todo')) || [])
   const inputRef = useRef('')
 
   const addTodo=()=>{
@@ -33,11 +33,14 @@ function App() {
     })
     dispatch({type: "create", payload:{id: todo.length ,title: inputRef.current.value}});
   }
- 
+  // useEffect(()=>{
+  //   localStorage.setItem('todo', JSON.stringify([]));
+  // }, [])
   useEffect(() => {
     inputRef.current.value = "";
     localStorage.setItem('todo', JSON.stringify(todo));
   }, [todo])
+  
   
 
   return (
